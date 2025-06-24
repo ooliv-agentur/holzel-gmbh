@@ -28,71 +28,78 @@ const Index = () => {
               HOLZEL GmbH
             </div>
             
-            {/* Burger Menu Button */}
+            {/* Burger Menu Button with Animation */}
             <button 
-              className="text-white p-2 hover:bg-slate-700 rounded transition-colors z-50 relative"
+              className="text-white p-2 hover:bg-slate-700 rounded transition-all duration-300 z-50 relative"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              <div className="relative w-6 h-6 flex items-center justify-center">
+                <Menu 
+                  size={24} 
+                  className={`absolute transition-all duration-300 ${
+                    isMenuOpen ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'
+                  }`} 
+                />
+                <X 
+                  size={24} 
+                  className={`absolute transition-all duration-300 ${
+                    isMenuOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-0'
+                  }`} 
+                />
+              </div>
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Full Screen Overlay Menu */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 bg-slate-900/95 z-50 flex items-center justify-center">
-          <div className="text-center space-y-8 max-w-md mx-auto px-4">
-            <div className="space-y-6">
-              <button 
-                onClick={() => scrollToSection('hero')}
-                className="block w-full text-2xl text-white hover:text-slate-300 transition-colors font-medium py-2"
-              >
-                Startseite
-              </button>
-              <button 
-                onClick={() => scrollToSection('leistungen')}
-                className="block w-full text-2xl text-white hover:text-slate-300 transition-colors font-medium py-2"
-              >
-                Leistungen
-              </button>
-              <button 
-                onClick={() => scrollToSection('team')}
-                className="block w-full text-2xl text-white hover:text-slate-300 transition-colors font-medium py-2"
-              >
-                Über uns
-              </button>
-              <button 
-                onClick={() => scrollToSection('fuhrpark')}
-                className="block w-full text-2xl text-white hover:text-slate-300 transition-colors font-medium py-2"
-              >
-                Fuhrpark
-              </button>
-              <button 
-                onClick={() => scrollToSection('kontakt')}
-                className="block w-full text-2xl text-white hover:text-slate-300 transition-colors font-medium py-2"
-              >
-                Kontakt
-              </button>
-            </div>
-            
-            <div className="border-t border-slate-600 pt-6 space-y-4">
-              <div className="text-slate-400 text-sm uppercase tracking-wider mb-4">In Vorbereitung</div>
-              <div className="text-lg text-slate-500 py-1">Containergrößen (coming soon)</div>
-              <div className="text-lg text-slate-500 py-1">Holzverwertung (coming soon)</div>
-              <div className="text-lg text-slate-500 py-1">Grünschnitt-Annahme (coming soon)</div>
-            </div>
+      {/* Full Screen Overlay Menu with Animation */}
+      <div className={`fixed inset-0 bg-slate-900/95 z-40 flex items-center justify-center transition-all duration-500 ${
+        isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+      }`}>
+        <div className={`text-center space-y-12 max-w-md mx-auto px-4 transition-all duration-500 ${
+          isMenuOpen ? 'transform translate-y-0 opacity-100' : 'transform translate-y-8 opacity-0'
+        }`}>
+          <div className="space-y-8">
+            <button 
+              onClick={() => scrollToSection('hero')}
+              className="block w-full text-3xl text-white hover:text-slate-300 transition-colors font-medium py-3 hover:scale-105 transform transition-transform duration-200"
+            >
+              Startseite
+            </button>
+            <button 
+              onClick={() => scrollToSection('leistungen')}
+              className="block w-full text-3xl text-white hover:text-slate-300 transition-colors font-medium py-3 hover:scale-105 transform transition-transform duration-200"
+            >
+              Leistungen
+            </button>
+            <button 
+              onClick={() => scrollToSection('team')}
+              className="block w-full text-3xl text-white hover:text-slate-300 transition-colors font-medium py-3 hover:scale-105 transform transition-transform duration-200"
+            >
+              Über uns
+            </button>
+            <button 
+              onClick={() => scrollToSection('fuhrpark')}
+              className="block w-full text-3xl text-white hover:text-slate-300 transition-colors font-medium py-3 hover:scale-105 transform transition-transform duration-200"
+            >
+              Fuhrpark
+            </button>
+            <button 
+              onClick={() => scrollToSection('kontakt')}
+              className="block w-full text-3xl text-white hover:text-slate-300 transition-colors font-medium py-3 hover:scale-105 transform transition-transform duration-200"
+            >
+              Kontakt
+            </button>
           </div>
-
-          {/* Close Button - Alternative Position */}
-          <button
-            onClick={() => setIsMenuOpen(false)}
-            className="absolute top-4 right-4 text-white p-2 hover:bg-slate-700 rounded transition-colors"
-          >
-            <X size={24} />
-          </button>
+          
+          <div className="border-t border-slate-600 pt-8 space-y-6">
+            <div className="text-slate-400 text-sm uppercase tracking-widest mb-6 font-semibold">In Vorbereitung</div>
+            <div className="text-xl text-slate-500 py-2 font-light">Containergrößen <span className="text-sm opacity-70">(coming soon)</span></div>
+            <div className="text-xl text-slate-500 py-2 font-light">Holzverwertung <span className="text-sm opacity-70">(coming soon)</span></div>
+            <div className="text-xl text-slate-500 py-2 font-light">Grünschnitt-Annahme <span className="text-sm opacity-70">(coming soon)</span></div>
+          </div>
         </div>
-      )}
+      </div>
 
       {/* Mobile Sticky Contact Bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-slate-800 border-t border-slate-700">
