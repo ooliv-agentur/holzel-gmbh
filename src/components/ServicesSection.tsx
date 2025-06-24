@@ -9,7 +9,13 @@ const ServicesSection = () => {
       icon: Truck,
     },
     {
-      title: "Personaldienstleistungen",
+      title: (
+        <>
+          Personal-
+          <br />
+          dienstleistungen
+        </>
+      ),
       description: "Qualifizierte Fachkräfte für temporäre und dauerhafte Einsätze in verschiedenen Branchen.",
       icon: Users,
     },
