@@ -30,7 +30,7 @@ const Index = () => {
             
             {/* Burger Menu Button */}
             <button 
-              className="text-white p-2 hover:bg-slate-700 rounded transition-colors"
+              className="text-white p-2 hover:bg-slate-700 rounded transition-colors z-50 relative"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -41,36 +41,36 @@ const Index = () => {
 
       {/* Full Screen Overlay Menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-slate-900/98 z-50 flex items-center justify-center">
-          <div className="text-center space-y-8">
+        <div className="fixed inset-0 bg-slate-900/95 z-50 flex items-center justify-center">
+          <div className="text-center space-y-8 max-w-md mx-auto px-4">
             <div className="space-y-6">
               <button 
                 onClick={() => scrollToSection('hero')}
-                className="block text-2xl text-white hover:text-slate-300 transition-colors font-medium"
+                className="block w-full text-2xl text-white hover:text-slate-300 transition-colors font-medium py-2"
               >
                 Startseite
               </button>
               <button 
                 onClick={() => scrollToSection('leistungen')}
-                className="block text-2xl text-white hover:text-slate-300 transition-colors font-medium"
+                className="block w-full text-2xl text-white hover:text-slate-300 transition-colors font-medium py-2"
               >
                 Leistungen
               </button>
               <button 
                 onClick={() => scrollToSection('team')}
-                className="block text-2xl text-white hover:text-slate-300 transition-colors font-medium"
+                className="block w-full text-2xl text-white hover:text-slate-300 transition-colors font-medium py-2"
               >
                 Über uns
               </button>
               <button 
                 onClick={() => scrollToSection('fuhrpark')}
-                className="block text-2xl text-white hover:text-slate-300 transition-colors font-medium"
+                className="block w-full text-2xl text-white hover:text-slate-300 transition-colors font-medium py-2"
               >
                 Fuhrpark
               </button>
               <button 
                 onClick={() => scrollToSection('kontakt')}
-                className="block text-2xl text-white hover:text-slate-300 transition-colors font-medium"
+                className="block w-full text-2xl text-white hover:text-slate-300 transition-colors font-medium py-2"
               >
                 Kontakt
               </button>
@@ -78,11 +78,19 @@ const Index = () => {
             
             <div className="border-t border-slate-600 pt-6 space-y-4">
               <div className="text-slate-400 text-sm uppercase tracking-wider mb-4">In Vorbereitung</div>
-              <div className="text-lg text-slate-500">Containergrößen (coming soon)</div>
-              <div className="text-lg text-slate-500">Holzverwertung (coming soon)</div>
-              <div className="text-lg text-slate-500">Grünschnitt-Annahme (coming soon)</div>
+              <div className="text-lg text-slate-500 py-1">Containergrößen (coming soon)</div>
+              <div className="text-lg text-slate-500 py-1">Holzverwertung (coming soon)</div>
+              <div className="text-lg text-slate-500 py-1">Grünschnitt-Annahme (coming soon)</div>
             </div>
           </div>
+
+          {/* Close Button - Alternative Position */}
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="absolute top-4 right-4 text-white p-2 hover:bg-slate-700 rounded transition-colors"
+          >
+            <X size={24} />
+          </button>
         </div>
       )}
 
