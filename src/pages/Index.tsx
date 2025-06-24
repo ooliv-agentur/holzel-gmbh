@@ -17,7 +17,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navigation scrollToSection={scrollToSection} />
+      <Navigation />
       <HeroSection scrollToSection={scrollToSection} />
       <ServicesSection />
       <TeamSection />
