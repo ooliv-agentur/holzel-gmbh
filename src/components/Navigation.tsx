@@ -24,7 +24,7 @@ const Navigation = () => {
     { label: "FUHRPARK", path: "/fuhrpark" },
     { label: "ANNAHME & VERWERTUNG", path: "/annahme-verwertung" },
     { label: "UNTERNEHMEN", path: "/unternehmen" },
-    { label: "KONTAKT", path: "#kontakt" },
+    { label: "KONTAKT", path: "/kontakt" },
   ];
 
   const comingSoonItems = [
@@ -67,7 +67,7 @@ const Navigation = () => {
       </nav>
 
       {/* True Fullscreen Overlay Menu */}
-      <div className={`fixed inset-0 bg-slate-900/95 z-40 flex items-center justify-center transition-all duration-500 ${
+      <div className={`fixed inset-0 bg-black/90 z-40 flex items-center justify-center transition-all duration-500 ${
         isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`}>
         <div className={`text-center space-y-20 max-w-lg mx-auto px-6 transition-all duration-700 ${
@@ -75,30 +75,16 @@ const Navigation = () => {
         }`}>
           {/* Main Navigation Items */}
           <div className="space-y-8">
-            {mainMenuItems.map((item) => {
-              if (item.path.startsWith('#')) {
-                return (
-                  <button
-                    key={item.label}
-                    onClick={() => handleMenuClick(item.path)}
-                    className="block w-full text-2xl md:text-3xl text-white hover:text-slate-300 transition-all duration-300 font-bold py-6 hover:scale-105 transform leading-relaxed tracking-wider uppercase"
-                  >
-                    {item.label}
-                  </button>
-                );
-              }
-              
-              return (
-                <Link
-                  key={item.label}
-                  to={item.path}
-                  onClick={() => handleMenuClick()}
-                  className="block w-full text-2xl md:text-3xl text-white hover:text-slate-300 transition-all duration-300 font-bold py-6 hover:scale-105 transform leading-relaxed tracking-wider uppercase"
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
+            {mainMenuItems.map((item) => (
+              <Link
+                key={item.label}
+                to={item.path}
+                onClick={() => handleMenuClick()}
+                className="block w-full text-2xl md:text-3xl text-white hover:text-slate-300 transition-all duration-300 font-bold py-6 hover:scale-105 transform leading-relaxed tracking-wider uppercase"
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
           
           {/* Coming Soon Section with Clear Separation */}

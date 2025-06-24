@@ -16,13 +16,15 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex flex-col">
       <Navigation />
-      <HeroSection scrollToSection={scrollToSection} />
-      <ServicesSection />
-      <TeamSection />
-      <FleetSection />
-      <ContactSection scrollToSection={scrollToSection} />
+      <div className="flex-1">
+        <HeroSection scrollToSection={scrollToSection} />
+        <ServicesSection />
+        <TeamSection />
+        <FleetSection />
+        <ContactSection scrollToSection={scrollToSection} />
+      </div>
       <Footer />
     </div>
   );
