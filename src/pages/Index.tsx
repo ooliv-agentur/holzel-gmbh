@@ -28,7 +28,7 @@ const Index = () => {
               HOLZEL GmbH
             </div>
             
-            {/* Burger Menu Button - Always Visible */}
+            {/* Burger Menu Button */}
             <button 
               className="text-white p-2 hover:bg-slate-700 rounded transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
