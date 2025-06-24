@@ -59,19 +59,19 @@ const Index = () => {
           {/* Mobile Menu */}
           {isMenuOpen && (
             <div className="md:hidden bg-slate-800 pb-4">
-              <button onClick={() => scrollToSection('hero')} className="block w-full text-left py-2 text-gray-300 hover:text-white transition-colors">
+              <button onClick={() => scrollToSection('hero')} className="block w-full text-left py-2 px-4 text-gray-300 hover:text-white transition-colors">
                 Start
               </button>
-              <button onClick={() => scrollToSection('leistungen')} className="block w-full text-left py-2 text-gray-300 hover:text-white transition-colors">
+              <button onClick={() => scrollToSection('leistungen')} className="block w-full text-left py-2 px-4 text-gray-300 hover:text-white transition-colors">
                 Leistungen
               </button>
-              <button onClick={() => scrollToSection('fuhrpark')} className="block w-full text-left py-2 text-gray-300 hover:text-white transition-colors">
+              <button onClick={() => scrollToSection('fuhrpark')} className="block w-full text-left py-2 px-4 text-gray-300 hover:text-white transition-colors">
                 Fuhrpark
               </button>
-              <button onClick={() => scrollToSection('team')} className="block w-full text-left py-2 text-gray-300 hover:text-white transition-colors">
+              <button onClick={() => scrollToSection('team')} className="block w-full text-left py-2 px-4 text-gray-300 hover:text-white transition-colors">
                 Über uns
               </button>
-              <button onClick={() => scrollToSection('kontakt')} className="block w-full text-left py-2 text-gray-300 hover:text-white transition-colors">
+              <button onClick={() => scrollToSection('kontakt')} className="block w-full text-left py-2 px-4 text-gray-300 hover:text-white transition-colors">
                 Kontakt
               </button>
             </div>
@@ -83,7 +83,7 @@ const Index = () => {
       <div className="fixed bottom-4 right-4 z-40 md:hidden">
         <Button 
           onClick={() => scrollToSection('kontakt')}
-          className="bg-orange-600 hover:bg-orange-700 text-white rounded-full w-14 h-14 shadow-lg"
+          className="bg-slate-700 hover:bg-slate-800 text-white rounded-full w-14 h-14 shadow-lg"
         >
           <Phone size={20} />
         </Button>
@@ -95,14 +95,14 @@ const Index = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight">
               Holzel Transporte –<br />
-              <span className="text-orange-600">Stark auf der Straße, flexibel im Einsatz</span>
+              <span className="text-slate-700">Stark auf der Straße, flexibel im Einsatz</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-600 mb-8 leading-relaxed">
               Wir bewegen, was andere nicht bewegen können – mit Containerlogistik, Walking-Floor-Systemen und zuverlässiger Holzverwertung in der Region Eifel, Mosel und Hunsrück.
             </p>
             <Button 
               onClick={() => scrollToSection('kontakt')}
-              className="bg-orange-600 hover:bg-orange-700 text-white text-lg px-8 py-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+              className="bg-slate-700 hover:bg-slate-800 text-white text-lg px-8 py-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
             >
               Jetzt Container anfragen
             </Button>
@@ -112,11 +112,11 @@ const Index = () => {
         {/* Hero Image Placeholder */}
         <div className="absolute inset-0 -z-10">
           <div className="w-full h-full bg-gradient-to-r from-slate-800/20 to-slate-600/20"></div>
-          <img 
-            src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=1200&h=800&fit=crop" 
-            alt="LKW im Einsatz" 
-            className="w-full h-full object-cover opacity-30"
-          />
+          <div className="w-full h-full bg-slate-300 flex items-center justify-center">
+            <div className="text-slate-500 text-xl font-medium bg-white/80 px-8 py-4 rounded">
+              LKW-Bild (Platzhalter)
+            </div>
+          </div>
         </div>
       </section>
 
@@ -131,11 +131,11 @@ const Index = () => {
               Unsere Kernkompetenzen liegen im Transport von Schüttgut, Grünschnitt und Altholz sowie in der Entsorgung und Verarbeitung regionaler Reststoffe.
             </p>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Card className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card className="group hover:shadow-lg transition-all duration-300 border-slate-200">
                 <CardContent className="p-8 text-center">
-                  <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-200 transition-colors">
-                    <Package className="text-orange-600" size={32} />
+                  <div className="bg-slate-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-slate-200 transition-colors">
+                    <Package className="text-slate-600" size={32} strokeWidth={1} />
                   </div>
                   <h3 className="text-xl font-bold text-slate-800 mb-4">Abrollcontainer</h3>
                   <p className="text-slate-600">
@@ -144,10 +144,10 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <Card className="group hover:shadow-lg transition-all duration-300 border-slate-200">
                 <CardContent className="p-8 text-center">
-                  <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-200 transition-colors">
-                    <Truck className="text-orange-600" size={32} />
+                  <div className="bg-slate-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-slate-200 transition-colors">
+                    <Truck className="text-slate-600" size={32} strokeWidth={1} />
                   </div>
                   <h3 className="text-xl font-bold text-slate-800 mb-4">Walking Floor Transporte</h3>
                   <p className="text-slate-600">
@@ -156,10 +156,10 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <Card className="group hover:shadow-lg transition-all duration-300 border-slate-200">
                 <CardContent className="p-8 text-center">
-                  <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-200 transition-colors">
-                    <Package className="text-orange-600" size={32} />
+                  <div className="bg-slate-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-slate-200 transition-colors">
+                    <Package className="text-slate-600" size={32} strokeWidth={1} />
                   </div>
                   <h3 className="text-xl font-bold text-slate-800 mb-4">Tautliner mit Hebebühne</h3>
                   <p className="text-slate-600">
@@ -168,10 +168,10 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <Card className="group hover:shadow-lg transition-all duration-300 border-slate-200">
                 <CardContent className="p-8 text-center">
-                  <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-200 transition-colors">
-                    <TreePine className="text-orange-600" size={32} />
+                  <div className="bg-slate-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-slate-200 transition-colors">
+                    <TreePine className="text-slate-600" size={32} strokeWidth={1} />
                   </div>
                   <h3 className="text-xl font-bold text-slate-800 mb-4">Grünschnitt & A1-Holz-Annahme</h3>
                   <p className="text-slate-600">
@@ -180,10 +180,10 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <Card className="group hover:shadow-lg transition-all duration-300 border-slate-200">
                 <CardContent className="p-8 text-center">
-                  <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-200 transition-colors">
-                    <Recycle className="text-orange-600" size={32} />
+                  <div className="bg-slate-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-slate-200 transition-colors">
+                    <Recycle className="text-slate-600" size={32} strokeWidth={1} />
                   </div>
                   <h3 className="text-xl font-bold text-slate-800 mb-4">Hackschnitzel & Schredderarbeiten</h3>
                   <p className="text-slate-600">
@@ -192,10 +192,10 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <Card className="group hover:shadow-lg transition-all duration-300 border-slate-200">
                 <CardContent className="p-8 text-center">
-                  <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-200 transition-colors">
-                    <Truck className="text-orange-600" size={32} />
+                  <div className="bg-slate-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-slate-200 transition-colors">
+                    <Truck className="text-slate-600" size={32} strokeWidth={1} />
                   </div>
                   <h3 className="text-xl font-bold text-slate-800 mb-4">Regional & Zuverlässig</h3>
                   <p className="text-slate-600">
@@ -219,47 +219,27 @@ const Index = () => {
               Unser moderner Fuhrpark ist das Herzstück unserer täglichen Arbeit – technisch auf dem neuesten Stand, gepflegt, einsatzbereit.
             </p>
 
-            {/* Vehicle Gallery */}
+            {/* Vehicle Gallery - Placeholder Images */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              <div className="group relative overflow-hidden rounded-lg shadow-lg">
-                <img 
-                  src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=400&h=300&fit=crop" 
-                  alt="LKW im Einsatz" 
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative overflow-hidden rounded-lg shadow-lg bg-slate-200 h-48 flex items-center justify-center">
+                <span className="text-slate-600 font-medium text-center px-4">LKW auf Baustelle<br />(Platzhalter)</span>
               </div>
-              <div className="group relative overflow-hidden rounded-lg shadow-lg">
-                <img 
-                  src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=400&h=300&fit=crop" 
-                  alt="Container Transport" 
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative overflow-hidden rounded-lg shadow-lg bg-slate-200 h-48 flex items-center justify-center">
+                <span className="text-slate-600 font-medium text-center px-4">Container Transport<br />(Platzhalter)</span>
               </div>
-              <div className="group relative overflow-hidden rounded-lg shadow-lg">
-                <img 
-                  src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=300&fit=crop" 
-                  alt="Baustelle" 
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative overflow-hidden rounded-lg shadow-lg bg-slate-200 h-48 flex items-center justify-center">
+                <span className="text-slate-600 font-medium text-center px-4">Holzumschlag<br />(Platzhalter)</span>
               </div>
-              <div className="group relative overflow-hidden rounded-lg shadow-lg">
-                <img 
-                  src="https://images.unsplash.com/photo-1597149013721-36ed4d635d5a?w=400&h=300&fit=crop" 
-                  alt="Holzverarbeitung" 
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative overflow-hidden rounded-lg shadow-lg bg-slate-200 h-48 flex items-center justify-center">
+                <span className="text-slate-600 font-medium text-center px-4">Containerbereitstellung<br />(Platzhalter)</span>
               </div>
             </div>
 
             {/* Customer Testimonial */}
-            <Card className="bg-orange-50 border-orange-200 max-w-2xl mx-auto">
+            <Card className="bg-slate-100 border-slate-300 max-w-2xl mx-auto">
               <CardContent className="p-8 text-center">
-                <p className="text-lg text-slate-700 italic mb-4">
-                  "Zuverlässig, pünktlich, unkompliziert. Bei Holzel weiß man, woran man ist."
+                <p className="text-xl text-slate-700 italic mb-4 font-medium">
+                  „Zuverlässig, pünktlich, unkompliziert. Bei Holzel weiß man, woran man ist."
                 </p>
                 <p className="text-slate-600 font-medium">
                   – Bauhof Rhein-Mosel
@@ -282,35 +262,35 @@ const Index = () => {
             </p>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <Card className="hover:shadow-lg transition-shadow duration-300">
+              <Card className="hover:shadow-lg transition-shadow duration-300 border-slate-200">
                 <CardContent className="p-8 text-center">
                   <div className="w-20 h-20 bg-slate-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                     <span className="text-2xl font-bold text-slate-600">BD</span>
                   </div>
                   <h3 className="text-xl font-bold text-slate-800 mb-2">Bernd Dreiser</h3>
-                  <p className="text-orange-600 font-medium mb-2">Geschäftsführer</p>
+                  <p className="text-slate-600 font-medium mb-2">Geschäftsführer</p>
                   <p className="text-slate-600 text-sm">Fuhrpark & Einsatzplanung</p>
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow duration-300">
+              <Card className="hover:shadow-lg transition-shadow duration-300 border-slate-200">
                 <CardContent className="p-8 text-center">
                   <div className="w-20 h-20 bg-slate-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                     <span className="text-2xl font-bold text-slate-600">DD</span>
                   </div>
                   <h3 className="text-xl font-bold text-slate-800 mb-2">Dennis Dreiser</h3>
-                  <p className="text-orange-600 font-medium mb-2">Disposition</p>
+                  <p className="text-slate-600 font-medium mb-2">Disposition</p>
                   <p className="text-slate-600 text-sm">Tourenplanung & Logistik</p>
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow duration-300">
+              <Card className="hover:shadow-lg transition-shadow duration-300 border-slate-200">
                 <CardContent className="p-8 text-center">
                   <div className="w-20 h-20 bg-slate-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                     <span className="text-2xl font-bold text-slate-600">ID</span>
                   </div>
                   <h3 className="text-xl font-bold text-slate-800 mb-2">Irene Dreiser</h3>
-                  <p className="text-orange-600 font-medium mb-2">Büro & Verwaltung</p>
+                  <p className="text-slate-600 font-medium mb-2">Büro & Verwaltung</p>
                   <p className="text-slate-600 text-sm">Kundenkontakt & Abrechnung</p>
                 </CardContent>
               </Card>
@@ -337,37 +317,37 @@ const Index = () => {
                 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <Phone className="text-orange-400 mt-1" size={20} />
+                    <Phone className="text-slate-400 mt-1" size={20} />
                     <div>
                       <p className="font-medium text-lg">Irene Dreiser (Büro)</p>
-                      <a href="tel:+4915172800926" className="text-orange-400 hover:text-orange-300 transition-colors text-xl">
+                      <a href="tel:+4915172800926" className="text-slate-300 hover:text-white transition-colors text-xl">
                         0151 – 728 009 26
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <Phone className="text-orange-400 mt-1" size={20} />
+                    <Phone className="text-slate-400 mt-1" size={20} />
                     <div>
                       <p className="font-medium text-lg">Bernd Dreiser (GF)</p>
-                      <a href="tel:+4916094751944" className="text-orange-400 hover:text-orange-300 transition-colors text-xl">
+                      <a href="tel:+4916094751944" className="text-slate-300 hover:text-white transition-colors text-xl">
                         0160 – 947 519 44
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <Mail className="text-orange-400 mt-1" size={20} />
+                    <Mail className="text-slate-400 mt-1" size={20} />
                     <div>
                       <p className="font-medium text-lg">E-Mail</p>
-                      <a href="mailto:info@holzel-gmbh.de" className="text-orange-400 hover:text-orange-300 transition-colors">
+                      <a href="mailto:info@holzel-gmbh.de" className="text-slate-300 hover:text-white transition-colors">
                         info@holzel-gmbh.de
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <MapPin className="text-orange-400 mt-1" size={20} />
+                    <MapPin className="text-slate-400 mt-1" size={20} />
                     <div>
                       <p className="font-medium text-lg">Adresse</p>
                       <p className="text-slate-300">
@@ -378,7 +358,7 @@ const Index = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <Clock className="text-orange-400 mt-1" size={20} />
+                    <Clock className="text-slate-400 mt-1" size={20} />
                     <div>
                       <p className="font-medium text-lg">Bürozeiten</p>
                       <p className="text-slate-300">Mo–Fr 08:00–17:00 Uhr</p>
@@ -387,8 +367,8 @@ const Index = () => {
                 </div>
 
                 {/* Map Placeholder */}
-                <div className="mt-8 h-48 bg-slate-700 rounded-lg flex items-center justify-center">
-                  <p className="text-slate-400">Google Maps Integration</p>
+                <div className="mt-8 h-48 bg-slate-700 rounded-lg flex items-center justify-center border border-slate-600">
+                  <p className="text-slate-400 font-medium">Google Maps Integration (Platzhalter)</p>
                 </div>
               </div>
 
@@ -401,7 +381,7 @@ const Index = () => {
                     <Input 
                       placeholder="Name *" 
                       required 
-                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500"
                     />
                   </div>
 
@@ -410,7 +390,7 @@ const Index = () => {
                       type="tel" 
                       placeholder="Telefonnummer *" 
                       required 
-                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500"
                     />
                   </div>
 
@@ -418,16 +398,16 @@ const Index = () => {
                     <Input 
                       type="email" 
                       placeholder="E-Mail" 
-                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500"
                     />
                   </div>
 
                   <div>
                     <Select>
-                      <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
+                      <SelectTrigger className="bg-white border-slate-300 text-slate-800">
                         <SelectValue placeholder="Art der Anfrage" />
                       </SelectTrigger>
-                      <SelectContent className="bg-slate-700 border-slate-600">
+                      <SelectContent className="bg-white border-slate-300">
                         <SelectItem value="container">Container-Anfrage</SelectItem>
                         <SelectItem value="rueckruf">Rückruf gewünscht</SelectItem>
                         <SelectItem value="allgemein">Allgemeine Anfrage</SelectItem>
@@ -440,13 +420,13 @@ const Index = () => {
                       placeholder="Ihre Nachricht *" 
                       required 
                       rows={4}
-                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500"
                     />
                   </div>
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-orange-600 hover:bg-orange-700 text-white py-3"
+                    className="w-full bg-slate-700 hover:bg-slate-600 text-white py-3"
                   >
                     Nachricht senden
                   </Button>
@@ -464,7 +444,7 @@ const Index = () => {
             <div className="mb-4 md:mb-0">
               <p className="text-sm">
                 © 2024 Holzel GmbH · Website in Bearbeitung · 
-                <span className="text-orange-400 ml-1">ooliv Werbeagentur</span>
+                <span className="text-slate-300 ml-1">ooliv Werbeagentur</span>
               </p>
             </div>
             
