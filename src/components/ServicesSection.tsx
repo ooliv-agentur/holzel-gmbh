@@ -1,8 +1,25 @@
 
-import { Card, CardContent } from "@/components/ui/card";
-import { Truck, Package, Recycle, TreePine } from "lucide-react";
+import { Truck, Users, Recycle } from "lucide-react";
 
 const ServicesSection = () => {
+  const services = [
+    {
+      title: "Transport & Logistik",
+      description: "Professionelle Transportlösungen für Industrie und Gewerbe mit modernster Fahrzeugflotte.",
+      icon: Truck,
+    },
+    {
+      title: "Personaldienstleistungen",
+      description: "Qualifizierte Fachkräfte für temporäre und dauerhafte Einsätze in verschiedenen Branchen.",
+      icon: Users,
+    },
+    {
+      title: "Entsorgung & Recycling",
+      description: "Umweltgerechte Entsorgung und Verwertung verschiedener Materialien nach höchsten Standards.",
+      icon: Recycle,
+    },
+  ];
+
   return (
     <section id="leistungen" className="section-spacing bg-white">
       <div className="section-container">
@@ -10,88 +27,25 @@ const ServicesSection = () => {
           <div className="section-header">
             <h2 className="mb-6">Unsere Leistungen</h2>
             <p className="text-body-large max-w-4xl mx-auto">
-              Unsere Kernkompetenzen liegen im Transport von Schüttgut, Grünschnitt und Altholz sowie in der Entsorgung und Verarbeitung regionaler Reststoffe.
+              Als erfahrener Partner bieten wir umfassende Dienstleistungen in den Bereichen 
+              Transport, Personal und Entsorgung.
             </p>
           </div>
-
+          
           <div className="grid-services">
-            <Card className="group hover:shadow-lg transition-all duration-300 border-slate-200">
-              <CardContent className="p-8 text-center">
-                <div className="bg-slate-100 w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-8 group-hover:bg-slate-200 transition-colors">
-                  <Package className="text-slate-700" size={36} strokeWidth={1.5} />
+            {services.map((service, index) => (
+              <div key={index} className="card-enhanced text-center group">
+                <div className="mb-8">
+                  <service.icon 
+                    size={48} 
+                    className="mx-auto text-slate-700 group-hover:text-slate-900 transition-colors duration-300" 
+                    strokeWidth={1.5}
+                  />
                 </div>
-                <h3 className="mb-4">Abrollcontainer</h3>
-                <p className="text-body">
-                  Verschiedene Größen für Bauschutt, Erdaushub und Altholz. Schnelle Bereitstellung und Abholung.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-lg transition-all duration-300 border-slate-200">
-              <CardContent className="p-8 text-center">
-                <div className="bg-slate-100 w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-8 group-hover:bg-slate-200 transition-colors">
-                  <Truck className="text-slate-700" size={36} strokeWidth={1.5} />
-                </div>
-                <h3 className="mb-4">Walking Floor Transporte</h3>
-                <p className="text-body">
-                  Lose Ware und Schüttgut effizient transportiert. Ideal für Hackschnitzel und Biomasse.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-lg transition-all duration-300 border-slate-200">
-              <CardContent className="p-8 text-center">
-                <div className="bg-slate-100 w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-8 group-hover:bg-slate-200 transition-colors">
-                  <Package className="text-slate-700" size={36} strokeWidth={1.5} />
-                </div>
-                <h3 className="mb-4">Tautliner mit Hebebühne</h3>
-                <p className="text-body">
-                  Stückgut und palettierte Ware sicher und zuverlässig transportiert.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-lg transition-all duration-300 border-slate-200">
-              <CardContent className="p-8 text-center">
-                <div className="bg-slate-100 w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-8 group-hover:bg-slate-200 transition-colors">
-                  <TreePine className="text-slate-700" size={36} strokeWidth={1.5} />
-                </div>
-                <h3 className="mb-4">Grünschnitt & A1-Holz-Annahme</h3>
-                <p className="text-body">
-                  Umweltgerechte Verwertung von Grünschnitt und qualitativem Altholz.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-lg transition-all duration-300 border-slate-200">
-              <CardContent className="p-8 text-center">
-                <div className="bg-slate-100 w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-8 group-hover:bg-slate-200 transition-colors">
-                  <Recycle className="text-slate-700" size={36} strokeWidth={1.5} />
-                </div>
-                <h3 className="mb-4">Hackschnitzel & Schredderarbeiten</h3>
-                <p className="text-body">
-                  Professionelle Aufbereitung für Biomasse und Energieverwertung.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-lg transition-all duration-300 border-slate-200">
-              <CardContent className="p-8 text-center">
-                <div className="bg-slate-100 w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-8 group-hover:bg-slate-200 transition-colors">
-                  <Truck className="text-slate-700" size={36} strokeWidth={1.5} />
-                </div>
-                <h3 className="mb-4">Regional & Zuverlässig</h3>
-                <p className="text-body">
-                  Kurze Wege, persönlicher Service und faire Preise in unserer Heimatregion.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center mt-16">
-            <p className="text-meta">
-              Details zu unseren Leistungen folgen in Kürze.
-            </p>
+                <h3 className="mb-6">{service.title}</h3>
+                <p className="text-body">{service.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

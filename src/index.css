@@ -88,21 +88,21 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
-  /* Typography Hierarchy */
+  /* Enhanced Typography Hierarchy */
   h1 {
-    @apply text-4xl md:text-6xl font-black text-slate-900 leading-tight tracking-tight;
+    @apply text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 leading-tight tracking-tight;
   }
 
   h2 {
-    @apply text-3xl md:text-5xl font-bold text-slate-900 leading-tight tracking-tight;
+    @apply text-3xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight tracking-tight;
   }
 
   h3 {
-    @apply text-xl md:text-2xl font-semibold text-slate-800 leading-tight;
+    @apply text-xl md:text-2xl lg:text-3xl font-bold text-slate-800 leading-tight tracking-wide;
   }
 
   .text-meta {
-    @apply text-sm text-slate-500 font-medium tracking-wide;
+    @apply text-sm text-slate-500 font-medium tracking-widest uppercase;
   }
 
   .text-body {
@@ -110,18 +110,18 @@
   }
 
   .text-body-large {
-    @apply text-lg md:text-xl text-slate-600 leading-relaxed;
+    @apply text-lg md:text-xl lg:text-2xl text-slate-600 leading-relaxed;
   }
 }
 
 @layer components {
-  /* Consistent Section Spacing */
+  /* Enhanced Section Spacing */
   .section-spacing {
-    @apply py-16 md:py-24 lg:py-32;
+    @apply py-20 md:py-28 lg:py-36;
   }
 
   .section-container {
-    @apply container mx-auto px-6 md:px-8;
+    @apply container mx-auto px-6 md:px-8 lg:px-12;
   }
 
   .section-content {
@@ -129,19 +129,28 @@
   }
 
   .section-header {
-    @apply text-center mb-12 md:mb-16 lg:mb-20;
+    @apply text-center mb-16 md:mb-20 lg:mb-24;
   }
 
-  /* Grid Systems */
+  /* Enhanced Grid Systems */
   .grid-services {
-    @apply grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12;
+    @apply grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 lg:gap-16;
   }
 
   .grid-team {
-    @apply grid md:grid-cols-3 gap-8 md:gap-10;
+    @apply grid md:grid-cols-3 gap-10 md:gap-12 lg:gap-16;
   }
 
   .grid-fleet {
-    @apply grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8;
+    @apply grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12;
+  }
+
+  /* Enhanced Card Styles with Better Contrast */
+  .card-enhanced {
+    @apply bg-white border border-slate-200 rounded-lg p-8 md:p-10 lg:p-12 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .card-fleet {
+    @apply bg-slate-50 border border-slate-200 rounded-lg p-6 md:p-8 hover:bg-white hover:shadow-md transition-all duration-300;
   }
 }
