@@ -1,30 +1,21 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
 
-  const handleMenuClick = (path?: string) => {
+  const handleMenuClick = () => {
     setIsMenuOpen(false);
-    // If it's a hash link on the current page, scroll to section
-    if (path?.startsWith('#') && location.pathname === '/') {
-      const element = document.getElementById(path.substring(1));
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
   };
 
   const mainMenuItems = [
-    { label: "STARTSEITE", path: "/" },
-    { label: "LEISTUNGEN", path: "/leistungen" },
-    { label: "FUHRPARK", path: "/fuhrpark" },
-    { label: "ANNAHME & VERWERTUNG", path: "/annahme-verwertung" },
-    { label: "UNTERNEHMEN", path: "/unternehmen" },
-    { label: "KONTAKT", path: "/kontakt" },
+    { label: "STARTSEITE" },
+    { label: "LEISTUNGEN" },
+    { label: "FUHRPARK" },
+    { label: "ANNAHME & VERWERTUNG" },
+    { label: "UNTERNEHMEN" },
+    { label: "KONTAKT" },
   ];
 
   const comingSoonItems = [
@@ -38,9 +29,9 @@ const Navigation = () => {
       <nav className="fixed top-0 w-full bg-slate-800/95 backdrop-blur-sm z-50 shadow-lg">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <Link to="/" className="text-xl font-bold text-white hover:text-slate-300 transition-colors">
+            <div className="text-xl font-bold text-white hover:text-slate-300 transition-colors cursor-pointer">
               HOLZEL GmbH
-            </Link>
+            </div>
             
             {/* Burger Menu Button with Enhanced Animation */}
             <button 
@@ -76,14 +67,13 @@ const Navigation = () => {
           {/* Main Navigation Items */}
           <div className="space-y-8">
             {mainMenuItems.map((item) => (
-              <Link
+              <div
                 key={item.label}
-                to={item.path}
-                onClick={() => handleMenuClick()}
-                className="block w-full text-2xl md:text-3xl text-white hover:text-slate-300 transition-all duration-300 font-bold py-6 hover:scale-105 transform leading-relaxed tracking-wider uppercase"
+                onClick={handleMenuClick}
+                className="block w-full text-2xl md:text-3xl text-white hover:text-slate-300 transition-all duration-300 font-bold py-6 hover:scale-105 transform leading-relaxed tracking-wider uppercase cursor-pointer"
               >
                 {item.label}
-              </Link>
+              </div>
             ))}
           </div>
           
