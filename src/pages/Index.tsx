@@ -28,69 +28,86 @@ const Index = () => {
               HOLZEL GmbH
             </div>
             
-            {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8">
-              <button onClick={() => scrollToSection('hero')} className="text-gray-300 hover:text-white transition-colors">
-                Start
-              </button>
-              <button onClick={() => scrollToSection('leistungen')} className="text-gray-300 hover:text-white transition-colors">
-                Leistungen
-              </button>
-              <button onClick={() => scrollToSection('fuhrpark')} className="text-gray-300 hover:text-white transition-colors">
-                Fuhrpark
-              </button>
-              <button onClick={() => scrollToSection('team')} className="text-gray-300 hover:text-white transition-colors">
-                Über uns
-              </button>
-              <button onClick={() => scrollToSection('kontakt')} className="text-gray-300 hover:text-white transition-colors">
-                Kontakt
-              </button>
-            </div>
-
-            {/* Mobile Menu Button */}
+            {/* Burger Menu Button - Always Visible */}
             <button 
-              className="md:hidden text-white"
+              className="text-white p-2 hover:bg-slate-700 rounded transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
-
-          {/* Mobile Menu */}
-          {isMenuOpen && (
-            <div className="md:hidden bg-slate-800 pb-4">
-              <button onClick={() => scrollToSection('hero')} className="block w-full text-left py-2 px-4 text-gray-300 hover:text-white transition-colors">
-                Start
-              </button>
-              <button onClick={() => scrollToSection('leistungen')} className="block w-full text-left py-2 px-4 text-gray-300 hover:text-white transition-colors">
-                Leistungen
-              </button>
-              <button onClick={() => scrollToSection('fuhrpark')} className="block w-full text-left py-2 px-4 text-gray-300 hover:text-white transition-colors">
-                Fuhrpark
-              </button>
-              <button onClick={() => scrollToSection('team')} className="block w-full text-left py-2 px-4 text-gray-300 hover:text-white transition-colors">
-                Über uns
-              </button>
-              <button onClick={() => scrollToSection('kontakt')} className="block w-full text-left py-2 px-4 text-gray-300 hover:text-white transition-colors">
-                Kontakt
-              </button>
-            </div>
-          )}
         </div>
       </nav>
 
-      {/* Sticky Contact Button Mobile */}
-      <div className="fixed bottom-4 right-4 z-40 md:hidden">
-        <Button 
-          onClick={() => scrollToSection('kontakt')}
-          className="bg-slate-700 hover:bg-slate-800 text-white rounded-full w-14 h-14 shadow-lg"
-        >
-          <Phone size={20} />
-        </Button>
+      {/* Full Screen Overlay Menu */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 bg-slate-900/98 z-50 flex items-center justify-center">
+          <div className="text-center space-y-8">
+            <div className="space-y-6">
+              <button 
+                onClick={() => scrollToSection('hero')}
+                className="block text-2xl text-white hover:text-slate-300 transition-colors font-medium"
+              >
+                Startseite
+              </button>
+              <button 
+                onClick={() => scrollToSection('leistungen')}
+                className="block text-2xl text-white hover:text-slate-300 transition-colors font-medium"
+              >
+                Leistungen
+              </button>
+              <button 
+                onClick={() => scrollToSection('team')}
+                className="block text-2xl text-white hover:text-slate-300 transition-colors font-medium"
+              >
+                Über uns
+              </button>
+              <button 
+                onClick={() => scrollToSection('fuhrpark')}
+                className="block text-2xl text-white hover:text-slate-300 transition-colors font-medium"
+              >
+                Fuhrpark
+              </button>
+              <button 
+                onClick={() => scrollToSection('kontakt')}
+                className="block text-2xl text-white hover:text-slate-300 transition-colors font-medium"
+              >
+                Kontakt
+              </button>
+            </div>
+            
+            <div className="border-t border-slate-600 pt-6 space-y-4">
+              <div className="text-slate-400 text-sm uppercase tracking-wider mb-4">In Vorbereitung</div>
+              <div className="text-lg text-slate-500">Containergrößen (coming soon)</div>
+              <div className="text-lg text-slate-500">Holzverwertung (coming soon)</div>
+              <div className="text-lg text-slate-500">Grünschnitt-Annahme (coming soon)</div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Mobile Sticky Contact Bar */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-slate-800 border-t border-slate-700">
+        <div className="flex">
+          <a 
+            href="tel:+4915172800926"
+            className="flex-1 bg-slate-800 text-white py-4 px-6 text-center font-medium hover:bg-slate-700 transition-colors flex items-center justify-center space-x-2"
+          >
+            <Phone size={18} />
+            <span>Anrufen</span>
+          </a>
+          <button 
+            onClick={() => scrollToSection('kontakt')}
+            className="flex-1 bg-slate-700 text-white py-4 px-6 text-center font-medium hover:bg-slate-600 transition-colors flex items-center justify-center space-x-2"
+          >
+            <Mail size={18} />
+            <span>Anfrage senden</span>
+          </button>
+        </div>
       </div>
 
       {/* Hero Section */}
-      <section id="hero" className="pt-16 min-h-screen flex items-center bg-gradient-to-br from-slate-100 to-slate-200">
+      <section id="hero" className="pt-16 min-h-screen flex items-center bg-gradient-to-br from-slate-100 to-slate-200 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight">
@@ -100,18 +117,22 @@ const Index = () => {
             <p className="text-xl md:text-2xl text-slate-600 mb-8 leading-relaxed">
               Wir bewegen, was andere nicht bewegen können – mit Containerlogistik, Walking-Floor-Systemen und zuverlässiger Holzverwertung in der Region Eifel, Mosel und Hunsrück.
             </p>
-            <Button 
-              onClick={() => scrollToSection('kontakt')}
-              className="bg-slate-700 hover:bg-slate-800 text-white text-lg px-8 py-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
-            >
-              Jetzt Container anfragen
-            </Button>
+            <div className="space-y-4">
+              <Button 
+                onClick={() => scrollToSection('kontakt')}
+                className="bg-slate-700 hover:bg-slate-800 text-white text-lg px-10 py-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+              >
+                Jetzt Container anfragen
+              </Button>
+              <p className="text-sm text-slate-600">
+                Wir melden uns werktags innerhalb von 24h.
+              </p>
+            </div>
           </div>
         </div>
         
         {/* Hero Image Placeholder */}
         <div className="absolute inset-0 -z-10">
-          <div className="w-full h-full bg-gradient-to-r from-slate-800/20 to-slate-600/20"></div>
           <div className="w-full h-full bg-slate-300 flex items-center justify-center">
             <div className="text-slate-500 text-xl font-medium bg-white/80 px-8 py-4 rounded">
               LKW-Bild (Platzhalter)
@@ -131,7 +152,7 @@ const Index = () => {
               Unsere Kernkompetenzen liegen im Transport von Schüttgut, Grünschnitt und Altholz sowie in der Entsorgung und Verarbeitung regionaler Reststoffe.
             </p>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <Card className="group hover:shadow-lg transition-all duration-300 border-slate-200">
                 <CardContent className="p-8 text-center">
                   <div className="bg-slate-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-slate-200 transition-colors">
@@ -204,54 +225,18 @@ const Index = () => {
                 </CardContent>
               </Card>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Fuhrpark Section */}
-      <section id="fuhrpark" className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-4">
-              Fuhrpark & Vertrauen
-            </h2>
-            <p className="text-lg text-slate-600 text-center mb-12 max-w-3xl mx-auto">
-              Unser moderner Fuhrpark ist das Herzstück unserer täglichen Arbeit – technisch auf dem neuesten Stand, gepflegt, einsatzbereit.
-            </p>
-
-            {/* Vehicle Gallery - Placeholder Images */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              <div className="relative overflow-hidden rounded-lg shadow-lg bg-slate-200 h-48 flex items-center justify-center">
-                <span className="text-slate-600 font-medium text-center px-4">LKW auf Baustelle<br />(Platzhalter)</span>
-              </div>
-              <div className="relative overflow-hidden rounded-lg shadow-lg bg-slate-200 h-48 flex items-center justify-center">
-                <span className="text-slate-600 font-medium text-center px-4">Container Transport<br />(Platzhalter)</span>
-              </div>
-              <div className="relative overflow-hidden rounded-lg shadow-lg bg-slate-200 h-48 flex items-center justify-center">
-                <span className="text-slate-600 font-medium text-center px-4">Holzumschlag<br />(Platzhalter)</span>
-              </div>
-              <div className="relative overflow-hidden rounded-lg shadow-lg bg-slate-200 h-48 flex items-center justify-center">
-                <span className="text-slate-600 font-medium text-center px-4">Containerbereitstellung<br />(Platzhalter)</span>
-              </div>
+            <div className="text-center mt-12">
+              <p className="text-slate-600">
+                Details zu unseren Leistungen folgen in Kürze.
+              </p>
             </div>
-
-            {/* Customer Testimonial */}
-            <Card className="bg-slate-100 border-slate-300 max-w-2xl mx-auto">
-              <CardContent className="p-8 text-center">
-                <p className="text-xl text-slate-700 italic mb-4 font-medium">
-                  „Zuverlässig, pünktlich, unkompliziert. Bei Holzel weiß man, woran man ist."
-                </p>
-                <p className="text-slate-600 font-medium">
-                  – Bauhof Rhein-Mosel
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section id="team" className="py-20 bg-white">
+      {/* Team Section - Moved before Fuhrpark */}
+      <section id="team" className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
@@ -299,8 +284,53 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Fuhrpark Section */}
+      <section id="fuhrpark" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-4">
+              Fuhrpark & Vertrauen
+            </h2>
+            <p className="text-lg text-slate-600 text-center mb-12 max-w-3xl mx-auto">
+              Unser moderner Fuhrpark ist das Herzstück unserer täglichen Arbeit – technisch auf dem neuesten Stand, gepflegt, einsatzbereit.
+            </p>
+
+            {/* Vehicle Gallery - Placeholder Images */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              <div className="relative overflow-hidden rounded-lg shadow-lg bg-slate-200 h-48 flex items-center justify-center">
+                <span className="text-slate-600 font-medium text-center px-4">LKW auf Baustelle<br />(Platzhalter)</span>
+              </div>
+              <div className="relative overflow-hidden rounded-lg shadow-lg bg-slate-200 h-48 flex items-center justify-center">
+                <span className="text-slate-600 font-medium text-center px-4">Container Transport<br />(Platzhalter)</span>
+              </div>
+              <div className="relative overflow-hidden rounded-lg shadow-lg bg-slate-200 h-48 flex items-center justify-center">
+                <span className="text-slate-600 font-medium text-center px-4">Holzumschlag<br />(Platzhalter)</span>
+              </div>
+              <div className="relative overflow-hidden rounded-lg shadow-lg bg-slate-200 h-48 flex items-center justify-center">
+                <span className="text-slate-600 font-medium text-center px-4">Containerbereitstellung<br />(Platzhalter)</span>
+              </div>
+            </div>
+
+            {/* Customer Testimonial - More prominent */}
+            <div className="bg-slate-100 py-16 rounded-xl">
+              <Card className="bg-white border-slate-300 max-w-3xl mx-auto shadow-lg">
+                <CardContent className="p-12 text-center">
+                  <div className="text-4xl text-slate-400 mb-4">"</div>
+                  <p className="text-2xl text-slate-700 italic mb-6 font-medium leading-relaxed">
+                    Zuverlässig, pünktlich, unkompliziert. Bei Holzel weiß man, woran man ist.
+                  </p>
+                  <p className="text-slate-600 font-medium text-lg">
+                    – Bauhof Rhein-Mosel
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
-      <section id="kontakt" className="py-20 bg-slate-800 text-white">
+      <section id="kontakt" className="py-20 pb-32 md:pb-20 bg-slate-800 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
@@ -381,7 +411,7 @@ const Index = () => {
                     <Input 
                       placeholder="Name *" 
                       required 
-                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500"
+                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500 h-12"
                     />
                   </div>
 
@@ -390,7 +420,7 @@ const Index = () => {
                       type="tel" 
                       placeholder="Telefonnummer *" 
                       required 
-                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500"
+                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500 h-12"
                     />
                   </div>
 
@@ -398,13 +428,13 @@ const Index = () => {
                     <Input 
                       type="email" 
                       placeholder="E-Mail" 
-                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500"
+                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500 h-12"
                     />
                   </div>
 
                   <div>
                     <Select>
-                      <SelectTrigger className="bg-white border-slate-300 text-slate-800">
+                      <SelectTrigger className="bg-white border-slate-300 text-slate-800 h-12">
                         <SelectValue placeholder="Art der Anfrage" />
                       </SelectTrigger>
                       <SelectContent className="bg-white border-slate-300">
@@ -426,9 +456,9 @@ const Index = () => {
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-slate-700 hover:bg-slate-600 text-white py-3"
+                    className="w-full bg-slate-700 hover:bg-slate-600 text-white py-4 text-lg"
                   >
-                    Nachricht senden
+                    Container anfragen
                   </Button>
                 </form>
               </div>
