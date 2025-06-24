@@ -17,104 +17,104 @@ const ContactSection = ({ scrollToSection }: ContactSectionProps) => {
         <div className="flex">
           <a 
             href="tel:+4915172800926"
-            className="flex-1 bg-slate-800 text-white py-4 px-6 text-center font-medium hover:bg-slate-700 transition-colors flex items-center justify-center space-x-2"
+            className="flex-1 bg-slate-800 text-white py-4 px-6 text-center font-semibold hover:bg-slate-700 transition-colors flex items-center justify-center space-x-2"
           >
-            <Phone size={18} />
+            <Phone size={18} strokeWidth={1.5} />
             <span>Anrufen</span>
           </a>
           <button 
             onClick={() => scrollToSection('kontakt')}
-            className="flex-1 bg-slate-700 text-white py-4 px-6 text-center font-medium hover:bg-slate-600 transition-colors flex items-center justify-center space-x-2"
+            className="flex-1 bg-slate-700 text-white py-4 px-6 text-center font-semibold hover:bg-slate-600 transition-colors flex items-center justify-center space-x-2"
           >
-            <Mail size={18} />
+            <Mail size={18} strokeWidth={1.5} />
             <span>Anfrage senden</span>
           </button>
         </div>
       </div>
 
       {/* Contact Section */}
-      <section id="kontakt" className="py-20 pb-32 md:pb-20 bg-slate-800 text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Kontakt
-            </h2>
-            <p className="text-lg text-slate-300 text-center mb-12 max-w-3xl mx-auto">
-              Schnell einen Container anfragen oder ein Transportangebot einholen? Rufen Sie uns an oder senden Sie eine Nachricht – wir melden uns kurzfristig zurück.
-            </p>
+      <section id="kontakt" className="section-spacing pb-32 md:pb-24 bg-slate-800 text-white">
+        <div className="section-container">
+          <div className="section-content">
+            <div className="section-header">
+              <h2 className="text-white mb-6">Kontakt</h2>
+              <p className="text-slate-300 text-body-large max-w-4xl mx-auto">
+                Schnell einen Container anfragen oder ein Transportangebot einholen? Rufen Sie uns an oder senden Sie eine Nachricht – wir melden uns kurzfristig zurück.
+              </p>
+            </div>
 
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid lg:grid-cols-2 gap-16">
               {/* Contact Information */}
               <div>
-                <h3 className="text-2xl font-bold mb-8">Direkter Kontakt</h3>
+                <h3 className="text-white mb-12">Direkter Kontakt</h3>
                 
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <Phone className="text-slate-400 mt-1" size={20} />
+                <div className="space-y-8">
+                  <div className="flex items-start space-x-5">
+                    <Phone className="text-slate-400 mt-2" size={24} strokeWidth={1.5} />
                     <div>
-                      <p className="font-medium text-lg">Irene Dreiser (Büro)</p>
-                      <a href="tel:+4915172800926" className="text-slate-300 hover:text-white transition-colors text-xl">
+                      <p className="font-semibold text-xl text-white mb-1">Irene Dreiser (Büro)</p>
+                      <a href="tel:+4915172800926" className="text-slate-300 hover:text-white transition-colors text-2xl font-medium">
                         0151 – 728 009 26
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4">
-                    <Phone className="text-slate-400 mt-1" size={20} />
+                  <div className="flex items-start space-x-5">
+                    <Phone className="text-slate-400 mt-2" size={24} strokeWidth={1.5} />
                     <div>
-                      <p className="font-medium text-lg">Bernd Dreiser (GF)</p>
-                      <a href="tel:+4916094751944" className="text-slate-300 hover:text-white transition-colors text-xl">
+                      <p className="font-semibold text-xl text-white mb-1">Bernd Dreiser (GF)</p>
+                      <a href="tel:+4916094751944" className="text-slate-300 hover:text-white transition-colors text-2xl font-medium">
                         0160 – 947 519 44
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4">
-                    <Mail className="text-slate-400 mt-1" size={20} />
+                  <div className="flex items-start space-x-5">
+                    <Mail className="text-slate-400 mt-2" size={24} strokeWidth={1.5} />
                     <div>
-                      <p className="font-medium text-lg">E-Mail</p>
-                      <a href="mailto:info@holzel-gmbh.de" className="text-slate-300 hover:text-white transition-colors">
+                      <p className="font-semibold text-xl text-white mb-1">E-Mail</p>
+                      <a href="mailto:info@holzel-gmbh.de" className="text-slate-300 hover:text-white transition-colors text-lg">
                         info@holzel-gmbh.de
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4">
-                    <MapPin className="text-slate-400 mt-1" size={20} />
+                  <div className="flex items-start space-x-5">
+                    <MapPin className="text-slate-400 mt-2" size={24} strokeWidth={1.5} />
                     <div>
-                      <p className="font-medium text-lg">Adresse</p>
-                      <p className="text-slate-300">
+                      <p className="font-semibold text-xl text-white mb-1">Adresse</p>
+                      <p className="text-slate-300 text-lg leading-relaxed">
                         Hagelstraße 6<br />
                         56743 Thür
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4">
-                    <Clock className="text-slate-400 mt-1" size={20} />
+                  <div className="flex items-start space-x-5">
+                    <Clock className="text-slate-400 mt-2" size={24} strokeWidth={1.5} />
                     <div>
-                      <p className="font-medium text-lg">Bürozeiten</p>
-                      <p className="text-slate-300">Mo–Fr 08:00–17:00 Uhr</p>
+                      <p className="font-semibold text-xl text-white mb-1">Bürozeiten</p>
+                      <p className="text-slate-300 text-lg">Mo–Fr 08:00–17:00 Uhr</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Map Placeholder */}
-                <div className="mt-8 h-48 bg-slate-700 rounded-lg flex items-center justify-center border border-slate-600">
+                <div className="mt-12 h-56 bg-slate-700 rounded-lg flex items-center justify-center border border-slate-600">
                   <p className="text-slate-400 font-medium">Google Maps Integration (Platzhalter)</p>
                 </div>
               </div>
 
               {/* Contact Form */}
               <div>
-                <h3 className="text-2xl font-bold mb-8">Anfrage senden</h3>
+                <h3 className="text-white mb-12">Anfrage senden</h3>
                 
                 <form className="space-y-6">
                   <div>
                     <Input 
                       placeholder="Name *" 
                       required 
-                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500 h-12"
+                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500 h-14 text-lg"
                     />
                   </div>
 
@@ -123,7 +123,7 @@ const ContactSection = ({ scrollToSection }: ContactSectionProps) => {
                       type="tel" 
                       placeholder="Telefonnummer *" 
                       required 
-                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500 h-12"
+                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500 h-14 text-lg"
                     />
                   </div>
 
@@ -131,13 +131,13 @@ const ContactSection = ({ scrollToSection }: ContactSectionProps) => {
                     <Input 
                       type="email" 
                       placeholder="E-Mail" 
-                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500 h-12"
+                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500 h-14 text-lg"
                     />
                   </div>
 
                   <div>
                     <Select>
-                      <SelectTrigger className="bg-white border-slate-300 text-slate-800 h-12">
+                      <SelectTrigger className="bg-white border-slate-300 text-slate-800 h-14 text-lg">
                         <SelectValue placeholder="Art der Anfrage" />
                       </SelectTrigger>
                       <SelectContent className="bg-white border-slate-300">
@@ -152,14 +152,15 @@ const ContactSection = ({ scrollToSection }: ContactSectionProps) => {
                     <Textarea 
                       placeholder="Ihre Nachricht *" 
                       required 
-                      rows={4}
-                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500"
+                      rows={5}
+                      className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-500 text-lg"
                     />
                   </div>
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-slate-700 hover:bg-slate-600 text-white py-4 text-lg"
+                    size="lg"
+                    className="w-full bg-slate-700 hover:bg-slate-600 text-white text-lg"
                   >
                     Container anfragen
                   </Button>
