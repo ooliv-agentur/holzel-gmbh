@@ -1,8 +1,17 @@
 
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const Leistungen = () => {
+  useEffect(() => {
+    document.title = "Unsere Leistungen - HOLZEL GmbH";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Umfassende Dienstleistungen in Transport & Logistik, Personaldienstleistungen und Entsorgung & Recycling von HOLZEL GmbH.');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />

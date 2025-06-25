@@ -1,4 +1,5 @@
 
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -8,6 +9,14 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  useEffect(() => {
+    document.title = "HOLZEL GmbH - Transport, Personal & Entsorgung";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Professionelle Dienstleistungen in Transport & Logistik, Personaldienstleistungen und Entsorgung & Recycling. Ihr zuverlässiger Partner für Industrie und Gewerbe.');
+    }
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {

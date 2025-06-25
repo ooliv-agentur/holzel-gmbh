@@ -1,9 +1,18 @@
 
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Kontakt = () => {
+  useEffect(() => {
+    document.title = "Kontakt - HOLZEL GmbH";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Direkter Kontakt für Anfragen, Rückfragen und Angebote – telefonisch oder über das Kontaktformular. Kontaktieren Sie HOLZEL GmbH.');
+    }
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {

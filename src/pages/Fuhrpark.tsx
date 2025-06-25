@@ -1,8 +1,17 @@
 
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const Fuhrpark = () => {
+  useEffect(() => {
+    document.title = "Unser Fuhrpark - HOLZEL GmbH";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Moderne Fahrzeugflotte für professionelle Transportlösungen. Detaillierte Fahrzeugübersicht und technische Spezifikationen von HOLZEL GmbH.');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />

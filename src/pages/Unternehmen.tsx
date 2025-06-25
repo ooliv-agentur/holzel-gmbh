@@ -1,8 +1,17 @@
 
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const Unternehmen = () => {
+  useEffect(() => {
+    document.title = "Unternehmen - HOLZEL GmbH";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Geschichte, Werte und Team-Informationen von HOLZEL GmbH. Erfahren Sie mehr über unser Unternehmen und unsere Philosophie.');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />

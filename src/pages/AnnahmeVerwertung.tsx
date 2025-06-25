@@ -1,8 +1,17 @@
 
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const AnnahmeVerwertung = () => {
+  useEffect(() => {
+    document.title = "Annahme & Verwertung - HOLZEL GmbH";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Umweltgerechte Materialannahme und Verwertungsprozesse nach höchsten Umweltstandards. Professionelle Entsorgungslösungen von HOLZEL GmbH.');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
